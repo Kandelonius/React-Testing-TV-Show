@@ -4,6 +4,7 @@ const url = "https://api.tvmaze.com/singlesearch/shows?q=stranger-things&embed=e
 export const fetchShow = () => {
     return axios.get(url)
         .then(res => {
+            console.log('res ', res);
             return res;
         })
         .catch(err => {
