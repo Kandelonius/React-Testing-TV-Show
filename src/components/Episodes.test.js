@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import Episodes from "./Episodes";
 
-const episodesData = [
+const episodeData = [
     {
         id: 553946,
         url: 'http://www.tvmaze.com/episodes/553946/stranger-things-1x01-chapter-one-the-vanishing-of-will-byers',
@@ -53,9 +53,9 @@ test("renders Episodes without errors", () => {
 
 test("renders episodes when episodes data is passed down", () => {
     const { getByText, queryByText, rerender } = render(
-                <Episodes episodes={[]} error="" />
-            )
-            expect(queryByText(/The Vanishing of Will Byers/i)).toBeNull()
-            rerender(<Episodes episodes={episodesData} error="" />)
-            expect(getByText(/The Vanishing of Will Byers/i)).toBeInTheDocument()
-        });
+        <Episodes episodes={[]} error="" />
+    )
+    expect(queryByText(/The Vanishing of Will Byers/i)).toBeNull()
+    rerender(<Episodes episodes={episodeData} error="" />)
+    expect(getByText(/The Vanishing of Will Byers/i)).toBeInTheDocument()
+});
